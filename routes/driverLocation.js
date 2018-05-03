@@ -29,6 +29,17 @@ router.put("/driverLocationSocket/:id", function(req, res, next){
 	}
 });
 
+//get all driver
+router.get("/alldriverslocations", function(req, res, next){
+	db.driversLocation.find(function(err, driversLocation){
+		if(err){
+			res.send(err);
+
+		}
+		res.json(driversLocation);
+	})
+}); 
+
 
 //get nearby driver
 router.get("/driverLocation", function(req, res, next){
