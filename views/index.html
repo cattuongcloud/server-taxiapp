@@ -60,7 +60,9 @@
         //When emited by user on random nearby driver
 
         var driverRequest = socket.id + "driverRequest";
-        socket.on(driverRequest, function(passengerData){
+		console.log("Passenger looking for a driver", passengerData);
+		debugger;
+        socket.on(driverRequest){
             if(passengerData){
 
                 console.log("Passenger looking for a driver", passengerData);
