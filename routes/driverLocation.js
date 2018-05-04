@@ -44,9 +44,9 @@ router.get("/alldriverslocations", function(req, res, next){
 //get nearby driver
 router.get("/driverLocation", function(req, res, next){
 	db.driversLocation.createIndex({point:"2dsphere"});
-	db.driversLocation.ensureIndex({"coordinates":"2dsphere"});
+	db.driversLocation.ensureIndex({"coordinate":"2dsphere"});
 	db.driversLocation.find({
-			"coordinates":{
+			"coordinate":{
 				"$near":{
 					"$geometry":{
 						"type":"Point",
